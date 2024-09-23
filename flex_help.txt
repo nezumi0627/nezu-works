@@ -1,0 +1,4 @@
+help,test,権限,sp
+me,mid,gid,info
+usearch:id,search:key
+翻訳:text,ai:question

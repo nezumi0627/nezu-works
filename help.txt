@@ -1,0 +1,59 @@
+Line Works Multi BOT-V2
+
+基本コマンド:
+- help 
+  コマンド一覧
+- test 
+  動作確認
+- 権限 
+  権限確認
+- speed 
+  速度確認
+- sticker:[on/off] 
+  スタンプの真似機能
+- urlinfo:[on/off] 
+  URLの詳細表示
+- me 
+  ユーザー情報
+- mid 
+  ユーザーID
+- gid 
+  グループID
+- info 
+  グループ情報
+- 翻訳:text 
+  翻訳
+- usearch:id 
+  ユーザー検索
+- idsearch:key 
+  名前に含まれる人を全員表示
+- search:keyword 
+  検索
+- ai:question 
+  AIに質問
+- samegroup:id 
+  共通のグループ
+- resend 
+  最新の画像の復元
+
+開発者専用コマンド:
+- rename:name 
+  ユーザー名変更
+- send:num:text 
+  指定回数送信
+- allgroups 
+  参加済みのグループの詳細
+- leave 
+  グループを退出
+- invite:id 
+  ユーザーを招待
+- create:name:targetid 
+  グループを作成
+- allsend:text 
+  全グループに送信（17文字以内）
+- memberadd:name 
+  指定した名前のメンバーを追加
+- checkno 
+  メッセージの番号を確認
+- sync 
+  メッセージを手動で強制同期
