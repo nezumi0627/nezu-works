@@ -8,6 +8,7 @@ import json
 import os
 import random
 import re
+import sqlite3
 import string
 import subprocess
 import time
@@ -43,13 +44,11 @@ tempMessageId = 733428260
 level_id = 230000002301389
 user_no_9 = 913000044300689
 
-input_id = "yusei@ncorp"
-password = "n@20080627"
+input_id = ""  # example@works
+password = ""  # 123456
 
 LOGIN_URL = "https://auth.worksmobile.com/login/loginProcessV2"
-LOGIN_PAGE_URL = (
-    "https://auth.worksmobile.com/login/login?accessUrl=https://talk.worksmobile.com/"
-)
+LOGIN_PAGE_URL = "https://auth.worksmobile.com/login/login?accessUrl=https://talk.worksmobile.com/"
 Origin = "https://talk.worksmobile.com"
 
 
@@ -83,9 +82,7 @@ def login(input_id, password):
             "password": password,
             "keepLoginYn": "N",
         }
-        response = requests.post(
-            LOGIN_URL, headers=headers, data=payload, allow_redirects=False
-        )
+        response = requests.post(LOGIN_URL, headers=headers, data=payload, allow_redirects=False)
         response.raise_for_status()
         cookies_dict = {cookie.name: cookie.value for cookie in response.cookies}
         cookies_json = json.dumps(cookies_dict, indent=4, ensure_ascii=False)
@@ -123,72 +120,107 @@ if cookies_json:
 def get_status(date_str):
     """
     Fetch issue details from the specified URL with the timestamp of the given date.
+
     Args:
         date_str (str): The date string in the format 'YYYY-MM-DD'.
+
     Returns:
         list or str: A list of dictionaries containing content, status, and time,
                      or a message indicating no issues if none are found.
     """
     try:
+        # Parse the date string and convert it to a timestamp
         date_time = datetime.strptime(date_str, "%Y-%m-%d")
         timestamp_ms = int(date_time.timestamp() * 1000)
+
+        # Construct the API URL
         url = f"https://dashboard.worksmobile.com/jp/api/v2/issueDetail?date={timestamp_ms}&language=ja_JP"
         response = requests.get(url, headers=nheaders, timeout=30)
+
+        # Check for successful response
         if response.status_code == 200:
             data = response.json()
             issues = data.get("data", [])
+
             if not issues:
                 return "現在発生している問題はありません"
+
             results = []
             for issue in issues:
                 contents = issue.get("contents", [])
                 has_resolved = any(content.get("status") == 4 for content in contents)
+
                 for content in contents:
                     status = content.get("status")
                     content_message = content.get("content")
-                    if status == 1:
-                        status_message = "確認中"
-                    elif status == 2:
-                        status_message = "進行中"
-                    elif status == 4:
-                        status_message = "復旧完了"
-                    else:
-                        status_message = "不明"
+
+                    # Determine status message
+                    status_message = {1: "確認中", 2: "進行中", 4: "復旧完了"}.get(status, "不明")
+
+                    # Skip resolved issues if applicable
                     if has_resolved and status != 4:
                         continue
+
                     result = {
                         "コンテンツ": content_message,
                         "状態": status_message,
                     }
+
+                    # Format the timestamp
                     timestamp_ms = content.get("time")
                     if timestamp_ms:
                         timestamp_s = timestamp_ms / 1000
-                        formatted_date = datetime.fromtimestamp(
-                            timestamp_s, tz=timezone.utc
-                        ).strftime("%Y-%m-%d %H:%M:%S")
+                        formatted_date = datetime.fromtimestamp(timestamp_s, tz=timezone.utc).strftime(
+                            "%Y-%m-%d %H:%M:%S"
+                        )
                         result["発生時間"] = formatted_date
                     else:
                         result["発生時間"] = "不明"
+
                     results.append(result)
+
             if not results:
                 return "現在発生している問題はありません"
             return results
         else:
             return f"エラー: ステータスコード {response.status_code}"
+
     except requests.RequestException as e:
         return f"リクエストエラー: {e}"
 
 
-def receive_messages(headers):
+def initialize_db(db_path):
+    """
+    Initialize the SQLite database and create the messages table if it doesn't exist.
+    Args:
+        db_path (str): The path to the SQLite database.
+    """
+    conn = sqlite3.connect(db_path)
+    cursor = conn.cursor()
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS received_messages (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            message_no TEXT UNIQUE,
+            channel_no TEXT,
+            last_message_no INTEGER,
+            message_time TEXT,
+            content TEXT
+        )
+    """)
+    conn.commit()
+    conn.close()
+
+
+def receive_messages(headers, domainId, userNo, db_path="received_messages.db"):
     """
     Receive messages from the server and handle them.
     Args:
         headers (dict): The headers to be used in the HTTP request.
         domainId (str): The domain ID of the user.
         userNo (str): The user number.
+        db_path (str): The path to the SQLite database.
     """
-    json_file_path = "received_messages.json"
-    received_messages = load_received_messages(json_file_path)
+    initialize_db(db_path)
     url = "https://talk.worksmobile.com/p/oneapp/client/chat/syncUserChannelList"
     payload = {
         "serviceId": "works",
@@ -206,51 +238,11 @@ def receive_messages(headers):
         while True:
             response = requests.post(url, json=payload, headers=headers, timeout=30)
             if response.status_code == 200:
-                handle_messages(response.json(), received_messages)
-                save_received_messages(received_messages, json_file_path)
+                handle_messages(response.json(), db_path)
             else:
                 print(f"Error: Status code {response.status_code}")
     except Exception as e:
         print(f"Error: {e}")
-
-
-def reset_file(file_path):
-    """
-    Clear the contents of a file by writing an empty list.
-    Args:
-        file_path (str): The path to the file to be cleared.
-    """
-    with open(file_path, "w") as file:
-        json.dump([], file)
-
-
-def save_received_messages(received_messages, json_file_path):
-    """
-    Save the received messages to a file in JSON format.
-    Args:
-        received_messages (set): A set of received messages.
-        json_file_path (str): The path to the JSON file.
-    """
-    with open(json_file_path, "w") as file:
-        json.dump(list(received_messages), file)
-
-
-def load_received_messages(json_file_path):
-    """
-    Load received messages from a JSON file.
-    Args:
-        json_file_path (str): The path to the JSON file.
-    Returns:
-        set: A set of received messages.
-    """
-    if os.path.exists(json_file_path):
-        with open(json_file_path, "r") as file:
-            data = json.load(file)
-            return set(tuple(item) if isinstance(item, list) else item for item in data)
-    else:
-        with open(json_file_path, "w") as file:
-            json.dump([], file)
-        return set()
 
 
 def ack_message(channelNo, messageNo):
@@ -298,13 +290,16 @@ def translate_text(text, target_language="ja"):
         response = requests.post(url, headers=nheaders, data=json.dumps(payload))
         response.raise_for_status()
         response_json = response.json()
-        translated_text = response_json.get("translations", [{}])[0].get(
-            "translatedText", ["No translation found"]
-        )[0]
+        translated_text = response_json.get("translations", [{}])[0].get("translatedText", ["No translation found"])[0]
         return translated_text
     except requests.RequestException as e:
         print(f"An error occurred: {e}")
         return None
+
+
+def load_unreact(filename):
+    with open(filename, "r") as f:
+        return json.load(f)
 
 
 def get_channel_members(channel_no, member_update_time=0, paging_count=500):
@@ -322,9 +317,7 @@ def get_channel_members(channel_no, member_update_time=0, paging_count=500):
 
 
 def get_latest_image(channel_no, limit=100000, range_flag=3):
-    url = (
-        "https://talk.worksmobile.com/p/oneapp/client/chat/getContentMessageListByRange"
-    )
+    url = "https://talk.worksmobile.com/p/oneapp/client/chat/getContentMessageListByRange"
     payload = {
         "baseMessageNo": 7,
         "channelNo": channel_no,
@@ -363,9 +356,7 @@ def get_latest_image(channel_no, limit=100000, range_flag=3):
         print("レスポンスメッセージ:", response.json())
 
 
-def search_and_fetch_messages(
-    keyword, start=0, display=1000, channel_no=291108891, msg_types=None
-):
+def search_and_fetch_messages(keyword, start=0, display=1000, channel_no=291108891, msg_types=None):
     """
     指定したチャンネルからキーワードに基づいてメッセージを検索・取得する関数。
     Args:
@@ -488,6 +479,17 @@ def getAllChats():
         response.raise_for_status()
 
 
+def getAllFriendsId():
+    data = getAllChats()
+    group_data = data.get("result", [])
+    group_ids = []
+    for group in group_data:
+        if group.get("channelType") == 6:
+            group_id = group.get("channelNo", "不明")
+            group_ids.append(group_id)
+    return group_ids
+
+
 def getAllGroupsId():
     data = getAllChats()
     group_data = data.get("result", [])
@@ -497,6 +499,69 @@ def getAllGroupsId():
             group_id = group.get("channelNo", "不明")
             group_ids.append(group_id)
     return group_ids
+
+
+def format_friends(response):
+    """
+    友達データを指定された形式で整形し、リスト形式で表示する関数
+    Parameters:
+    response (dict): APIのレスポンスデータ。'result' キーに友達情報を含む辞書のリストがある。
+    Returns:
+    str: 整形された友達情報のリスト
+    """
+    friend_data = response.get("result", [])
+    if not isinstance(friend_data, list):
+        return f"エラー: 友達データはリストである必要があります。実際のデータ型: {type(friend_data)}"
+
+    total_friends = 0
+    formatted_friends = []
+
+    for friend in friend_data:
+        if not isinstance(friend, dict):
+            return f"エラー: 各友達データは辞書である必要があります。実際のデータ型: {type(friend)}"
+
+        try:
+            # channelTypeが10の場合はスキップ
+            if friend.get("channelType") == 10:
+                continue
+
+            user_list = friend.get("userList", [])
+            # 名前と参加時間を取得
+            user = next((user for user in user_list if isinstance(user, dict)), None)
+            name = user.get("name", "不明") if user else "不明"
+            join_time_ms = user.get("joinTime", "不明") if user else "不明"
+            channel_no = friend.get("channelNo", "不明")
+            user_no = friend.get("userNo", "不明")
+
+            # 日付に変換
+            if join_time_ms != "不明":
+                join_time_dt = datetime.fromtimestamp(join_time_ms / 1000)
+                join_time_str = join_time_dt.strftime("%Y-%m-%d %H:%M")
+            else:
+                join_time_str = "不明"
+
+            message_time_ms = friend.get("messageTime", "不明")
+            if message_time_ms != "不明":
+                message_time_dt = datetime.fromtimestamp(message_time_ms / 1000)
+                message_time_str = message_time_dt.strftime("%Y-%m-%d %H:%M")
+            else:
+                message_time_str = "不明"
+
+            formatted_friends.append(
+                f"""------------------
+名前: {name}
+Channel ID: {channel_no}
+user No : {user_no}
+追加時間: {join_time_str}
+最終更新時間: {message_time_str}"""
+            )
+            total_friends += 1
+
+        except Exception as e:
+            return f"エラー: データの整形中に問題が発生しました。詳細: {e}"
+
+    result = f"[All Friends]\n\n合計友達数: {total_friends}\n" + "\n".join(formatted_friends)
+    return result
 
 
 def format_join_groups(response):
@@ -533,9 +598,7 @@ def format_join_groups(response):
                 total_groups += 1
         except Exception as e:
             return f"エラー: データの整形中に問題が発生しました。詳細: {e}"
-    result = f"[All Join Groups]\n\n合計参加数: {total_groups}\n" + "\n".join(
-        formatted_groups
-    )
+    result = f"[All Join Groups]\n\n合計参加数: {total_groups}\n" + "\n".join(formatted_groups)
     return result
 
 
@@ -569,9 +632,7 @@ def extract_info(response_data):
         name_counts[name] = name_counts.get(name, 0) + 1
     first_time_str = datetime.fromtimestamp(first_time).strftime("%Y-%m-%d %H:%M:%S")
     last_time_str = datetime.fromtimestamp(last_time).strftime("%Y-%m-%d %H:%M:%S")
-    name_summary = "\n".join(
-        f"{name}: 合計 {count} 回\n" for name, count in name_counts.items()
-    )
+    name_summary = "\n".join(f"{name}: 合計 {count} 回\n" for name, count in name_counts.items())
     return (
         f"総受信回数: {total_count} 回\n\n"
         f"一番最初に送られた時間:\n{first_time_str}\n\n"
@@ -581,9 +642,7 @@ def extract_info(response_data):
 
 
 def create_account(input_name, domainId, level_id, nheaders):
-    create_account_url = (
-        "https://admin.worksmobile.com/api/Z846869/contact/adminapi/v1/users"
-    )
+    create_account_url = "https://admin.worksmobile.com/api/Z846869/contact/adminapi/v1/users"
     random_number = "".join(random.choices(string.digits, k=6))
     account_id = "nezumi" + random_number
     name = input_name[:80]
@@ -635,9 +694,7 @@ def create_account(input_name, domainId, level_id, nheaders):
         "employeeNumber": "",
         "changePasswordAtNextLogin": True,
     }
-    response_create_account = requests.post(
-        create_account_url, headers=nheaders, json=payload
-    )
+    response_create_account = requests.post(create_account_url, headers=nheaders, json=payload)
     user_key_list = []
     if response_create_account.status_code == 201:
         user_no = response_create_account.json()["id"]
@@ -649,6 +706,43 @@ def create_account(input_name, domainId, level_id, nheaders):
             f"Response: {json.dumps(response_create_account.json(), indent=4, ensure_ascii=False)}"
         )
     return user_key_list
+
+
+def check_speed(group_id, message, domain_id=domainId, user_no=userNo):
+    """
+    Send a message to a specified group.
+    Args:
+        group_id (int): The ID of the group.
+        message (str): The message to be sent.
+        domain_id (int, optional): The domain ID of the caller. Defaults to None.
+        user_no (int, optional): The user number of the caller. Defaults to None.
+    Returns:
+        float: The time taken to send the message in seconds.
+    """
+    url = "https://talk.worksmobile.com/p/oneapp/client/chat/sendMessage"
+    payload = {
+        "serviceId": "works",
+        "channelNo": group_id,
+        "tempMessageId": tempMessageId,
+        "caller": {"domainId": domain_id, "userNo": user_no},
+        "extras": "",
+        "content": message,
+        "type": 1,
+    }
+
+    start_time = time.time()  # 計測開始
+
+    response = requests.post(url, headers=nheaders, json=payload)
+
+    end_time = time.time()  # 計測終了
+    elapsed_time = end_time - start_time  # 経過時間
+
+    if response.status_code == 200:
+        print("メッセージの送信に成功しました！")
+    else:
+        print("メッセージの送信に失敗しました。ステータスコード:", response.status_code)
+
+    return elapsed_time  # 経過時間を返す
 
 
 def send_message(group_id, message, domain_id=domainId, user_no=userNo):
@@ -739,9 +833,7 @@ def get_works_member():
 
 
 def del_member(user_id):
-    url = (
-        f"https://admin.worksmobile.com/api/Z846869/contact/adminapi/v1/users/{user_id}"
-    )
+    url = f"https://admin.worksmobile.com/api/Z846869/contact/adminapi/v1/users/{user_id}"
 
     response = requests.delete(url, headers=nheaders)
 
@@ -831,6 +923,14 @@ def shere_message(original_channel_no, original_message_no, target_channel_no):
     response = requests.post(url, headers=nheaders, json=data)
 
     return response.status_code, response.text
+
+
+def get_member_data(user_id_no: str):
+    url = f"https://admin.worksmobile.com/api/public/admin/function-auth/mixed/MF002/members/{user_id_no}"
+
+    response = requests.get(url, headers=nheaders)
+    response.raise_for_status()
+    return response.json()
 
 
 def send_add_log(group_id):
@@ -1019,9 +1119,7 @@ text_generation_models = [
 ]
 
 
-def gen_ai(
-    model_type: str, model_name: str, content: str, save_dir: str
-) -> Union[str, None]:
+def gen_ai(model_type: str, model_name: str, content: str, save_dir: str) -> Union[str, None]:
     if model_type == "image" and model_name not in image_generation_models:
         raise ValueError(f"Invalid image generation model: {model_name}")
     if model_type == "text" and model_name not in text_generation_models:
@@ -1075,11 +1173,7 @@ def gen_ai(
                 .get("message", {})
                 .get("content", "")
             )
-            urls = [
-                line.split("](")[-1].split(")")[0]
-                for line in content_text.split("\n")
-                if line.startswith("[![")
-            ]
+            urls = [line.split("](")[-1].split(")")[0] for line in content_text.split("\n") if line.startswith("[![")]
             if urls:
                 return urls[0]
         elif model_type == "text":
@@ -1145,9 +1239,7 @@ def initialize_csv(file_name):
             writer.writerow(header)
 
 
-def record_message_csv(
-    file_name, channel_no, message_no, user_no, message_time, content, extras
-):
+def record_message_csv(file_name, channel_no, message_no, user_no, message_time, content, extras):
     """
     Record a message to the CSV file.
 
@@ -1167,9 +1259,7 @@ def record_message_csv(
 
     with open(file_name, "a", newline="", encoding="utf-8") as file:
         writer = csv.writer(file)
-        writer.writerow(
-            [channel_no, message_no, user_no, message_time, content, extras]
-        )
+        writer.writerow([channel_no, message_no, user_no, message_time, content, extras])
 
 
 def create_default_config(channel_id):
@@ -1216,71 +1306,69 @@ def save_config(channel_id, config):
         json.dump(config, config_file, indent=4)
 
 
-def handle_messages(messages, received_messages):
+def handle_messages(messages, db_path="received_messages.db"):
     """
-    Handle received messages and record them in CSV by channel ID.
+    Handle received messages and record them in the SQLite database.
 
     Args:
         messages (dict): The received messages.
-        received_messages (set): The set of received messages.
+        db_path (str): The path to the SQLite database.
     """
     if not isinstance(messages, dict):
         print("Received messages are not a dictionary.")
         return
 
     results = messages.get("result", [])
+    conn = sqlite3.connect(db_path)
+    cursor = conn.cursor()
 
     for message in results:
         if not isinstance(message, dict):
-            print(f"エラー: メッセージが辞書ではありません: {message}")
+            print(f"Error: Message is not a dictionary: {message}")
             continue
 
         last_message_no = int(message.get("lastMessageNo", 0))
-        message_time = message.get("messageTime", "不明")
+        message_time = message.get("messageTime", "Unknown")
         message_no = message.get("messageNo")
-        if message_no in received_messages:
-            continue
         user_no = message.get("userNo")
-        if user_no is None:
-            print(f"エラー: ユーザー番号がメッセージに含まれていません: {message}")
-            continue
         content = message.get("content", "")
         channel_no = message.get("channelNo")
         extras = message.get("extras", "{}")
 
+        # user_no_9 と unreact_users をチェックし、自信に反応しない
         if user_no == user_no_9:
             continue
 
-        # チャンネルIDに基づくCSVファイル名の作成
-        csv_file_name = f"./records/{channel_no}.csv"
+        # Check if the message is already in the database
+        cursor.execute("SELECT COUNT(*) FROM received_messages WHERE message_no=?", (message_no,))
+        if cursor.fetchone()[0] > 0:
+            continue
 
-        # CSVファイルの初期化
-        initialize_csv(csv_file_name)
-        # メッセージの記録
-        record_message_csv(
-            csv_file_name,
-            channel_no=channel_no,
-            message_no=message_no,
-            user_no=user_no,
-            message_time=message_time,
-            content=content,
-            extras=extras,
-        )
+        # Insert message into SQLite database
+        try:
+            cursor.execute(
+                """
+                INSERT INTO received_messages (message_no, channel_no, last_message_no, message_time, content)
+                VALUES (?, ?, ?, ?, ?)
+            """,
+                (message_no, channel_no, last_message_no, message_time, json.dumps(message)),
+            )
+        except sqlite3.Error as e:
+            print(f"Database error: {e}")
+            continue
 
-        # 設定ファイルのロード
+        # Handle extras (stickers and URL info)
         config = load_config(channel_no)
         send_stickers = config.get("send_stickers", True)
         send_url_info = config.get("send_url_info", True)
 
         try:
+            if user_no == user_no_9:
+                pass
             if extras:
                 extras_dict = json.loads(extras)
 
-                # 設定からフラグを取得
-                send_stickers = config.get("send_stickers", False)
-                send_url_info = config.get("send_url_info", False)
-
-                # スタンプ情報の処理
+                # Process sticker information
                 if send_stickers:
                     pkg_id = extras_dict.get("pkgId")
                     stk_id = extras_dict.get("stkId")
@@ -1289,18 +1377,14 @@ def handle_messages(messages, received_messages):
                     if stk_type and pkg_id and stk_id:
                         send_sticker(channel_no, stk_type, pkg_id, stk_id, stk_opt)
 
-                # URL情報の処理
+                # Process URL information
                 if send_url_info:
                     urlcontent = extras_dict.get("content", {})
                     og_title = urlcontent.get("ogTitle", "No Title")
                     og_desc = urlcontent.get("ogDesc", "No Description")
                     og_url = urlcontent.get("ogUrl", None)
                     if og_url:
-                        message_text = (
-                            f"[URL INFO]\n\n"
-                            f"Title:\n{og_title}\n\n"
-                            f"Description:\n{og_desc}\n\n"
-                        )
+                        message_text = f"[URL INFO]\n\nTitle:\n{og_title}\n\nDescription:\n{og_desc}\n\n"
                         send_message(channel_no, message_text)
 
             if content.startswith("sticker:"):
@@ -1370,11 +1454,26 @@ def handle_messages(messages, received_messages):
                 send_message(channel_no, f"{user_no}")
 
             if content == "sp":
-                start_time = time.time()
-                send_message(channel_no, "...")
-                end_time = time.time()
-                speed = int(end_time - start_time)
-                send_message(channel_no, f"Spped: {speed}秒")
+                # Measure message sending time
+                elapsed_time_send: float = check_speed(channel_no, "...")
+
+                # Measure profile retrieval time
+                start_time_profile: float = time.time()
+                user_info = getUserInfo(user_no)
+                elapsed_time_profile: float = time.time() - start_time_profile
+
+                # Measure group information retrieval time
+                start_time_group: float = time.time()
+                channel_infos = get_channel_info(channel_no)
+                elapsed_time_group: float = time.time() - start_time_group
+
+                # Send results
+                result_message: str = (
+                    f"Send Message: {elapsed_time_send:.2f} seconds\n"
+                    f"Get User: {elapsed_time_profile:.2f} seconds\n"
+                    f"Get Group: {elapsed_time_group:.2f} seconds"
+                )
+                send_message(channel_no, result_message)
 
             if content.startswith("usearch:"):
                 id = content[len("usearch:") :].strip()
@@ -1392,9 +1491,7 @@ def handle_messages(messages, received_messages):
 
             if content == "権限":
                 if user_no == MaguRo:
-                    send_message(
-                        channel_no, "えっと...たしかあなたまぐろさんですよね!!🐟️"
-                    )
+                    send_message(channel_no, "えっと...たしかあなたまぐろさんですよね!!🐟️")
                 elif user_no == debugger:
                     send_message(channel_no, "あなたは開発者です🕶️")
                 elif int(user_no) in owners:
@@ -1459,88 +1556,17 @@ def handle_messages(messages, received_messages):
                 except Exception as e:
                     print(f"Error: {e}")
 
-            if content == "~~~ヾ(＾∇＾)おはよー♪":
-                send_message(channel_no, " ~~~ヾ(＾∇＾)おはよー♪")
-
-            if content == "⊂二二二（　＾ω＾）二⊃ﾌﾞｰﾝ":
-                send_message(channel_no, " ⊂二二二（　＾ω＾）二⊃ﾌﾞｰﾝ")
-
-            if (
-                content == "まぐろ"
-                or content == "まぐ"
-                or content == "マグロ"
-                or content == "マグ"
-                or content == "maguro"
-            ):
-                send_message(channel_no, "おさかな研究家のまぐろさん🐟️")
-
-            if (
-                content == "もやし"
-                or content == "モヤシ"
-                or content == "しょーたくん"
-                or content == "まどあ"
-                or content == "林しょーた"
-            ):
-                send_message(channel_no, "もやしはバター炒めが美味しいよね!!")
-
-            if (
-                content == "なの"
-                or content == "ナノ"
-                or content == "本家なの"
-                or content == "本家ナノ"
-                or content == "かずき"
-                or content == "一輝"
-                or content == "nano"
-            ):
-                send_message(channel_no, "Miku-Bot")
-
-            if (
-                content == "はふくん"
-                or content == "はふ"
-                or content == "羽風くん"
-                or content == "羽風"
-                or content == "hafu"
-            ):
-                send_message(channel_no, "⊂二二二（　＾ω＾）二⊃ﾌﾞｰﾝ")
-
-            if (
-                content == "はやしくん"
-                or content == "林"
-                or content == "はやし"
-                or content == "林くん"
-                or content == "林男"
-                or content == "はやお"
-            ):
-                send_message(channel_no, "紫兜の相方")
-
-            if (
-                content == "ねずみ"
-                or content == "nezumi"
-                or content == "ネズミ"
-                or content == "ねず"
-                or content == "ねじゅ"
-                or content == "ねずっち"
-            ):
-                send_message(channel_no, "ねずみは開発者兼アイドル❤")
-
             if content.startswith("idsearch:"):
                 target_name = content[len("idsearch:") :].strip()
                 response_data = get_channel_members(channel_no)
                 user_list = []
                 for member in response_data.get("members", []):
                     user_no = member.get("userNo")
-                    name = (
-                        member.get("nickName")
-                        or member.get("i18nName")
-                        or member.get("name")
-                    )
+                    name = member.get("nickName") or member.get("i18nName") or member.get("name")
                     if name and target_name in name:
                         user_list.append((user_no, name))
                 if user_list:
-                    user_messages = [
-                        f"ユーザー番号: {user[0]}\nユーザー名: {user[1]}"
-                        for user in user_list
-                    ]
+                    user_messages = [f"ユーザー番号: {user[0]}\nユーザー名: {user[1]}" for user in user_list]
                     message = "\n".join(user_messages)
                     send_message(channel_no, message)
                 else:
@@ -1564,9 +1590,7 @@ def handle_messages(messages, received_messages):
                                 else:
                                     send_message(channel_no, "データ形式が不正です。")
                         else:
-                            send_message(
-                                channel_no, "現在発生している問題はありません。"
-                            )
+                            send_message(channel_no, "現在発生している問題はありません。")
                     else:
                         send_message(channel_no, status_details)
 
@@ -1577,24 +1601,6 @@ def handle_messages(messages, received_messages):
                     channel_no,
                     f"最新のファイルです:\nhttps://nezuminff0627.pythonanywhere.com/?image={file}",
                 )
-
-            if content == "!dev:stop":
-                if user_no == debugger:
-                    stop(channel_no)
-                else:
-                    pass
-
-            if content == "!dev:restart":
-                if user_no == debugger:
-                    restart(channel_no)
-                else:
-                    pass
-
-            if content == "!dev:shutdown":
-                if user_no == debugger:
-                    shutdown(channel_no)
-                else:
-                    pass
 
             if content.startswith("exec:"):
                 try:
@@ -1625,12 +1631,29 @@ def handle_messages(messages, received_messages):
                 except Exception as e:
                     print(f"Error: {e}")
 
-            if content.startswith("allsend:"):
+            if content.startswith("join:"):
+                # if user_no == debugger:
+                try:
+                    target_id = content[len("join:") :].strip()
+                    invite_user(group_id=str(target_id), user_id=str(user_no))
+                except Exception as e:
+                    print(f"Error: {e}")
+            #     else:
+            # pass
+
+            if content == "allsend":
                 if user_no == debugger:
-                    text = content[len("allsend:") :].strip()
-                    ids = getAllGroupsId()
-                    for id in ids:
-                        send_message(id, text)
+                    # notify.txtからメッセージを読み込む
+                    try:
+                        with open("notify.txt", "r", encoding="utf-8") as file:
+                            text = file.read().strip()
+                        ids = getAllGroupsId()
+                        for id in ids:
+                            send_message(id, text)
+                    except FileNotFoundError:
+                        print("エラー: notify.txtが見つかりません。")
+                    except Exception as e:
+                        print(f"エラー: {e}")
                 else:
                     pass
 
@@ -1640,9 +1663,7 @@ def handle_messages(messages, received_messages):
                     no_list = create_account(name, domainId, level_id, nheaders)
                     if no_list:
                         target = no_list[0]["userNo"]
-                        send_message(
-                            channel_no, f"Account Created:\nID: {target}\nName: {name}"
-                        )
+                        send_message(channel_no, f"Account Created:\nID: {target}\nName: {name}")
                         time.sleep(1)
                         invite_user(
                             group_id=str(channel_no),
@@ -1654,42 +1675,6 @@ def handle_messages(messages, received_messages):
                         send_message(channel_no, "Failed to create account.")
                 else:
                     pass
-            if content == "alldel":
-                if user_no == debugger:
-                    members = get_works_member()  # メンバーを取得
-                    memberlist = []  # メンバー削除情報を格納するリスト
-
-                    print(f"取得したメンバー数: {len(members)}")  # メンバー数を表示
-
-                    for member in members:
-                        if isinstance(member, dict):
-                            member_id = member.get("id")
-                            name = member.get("name")
-
-                            print(
-                                f"処理中のメンバー: {name}({member_id})"
-                            )  # 現在処理しているメンバーを表示
-
-                            # userNoを除外して退会処理を呼び出す
-                            if (
-                                member_id != userNo
-                            ):  # userNoがID1の場合は退会処理を避ける
-                                member_resign(member_id)
-                                del_member(member_id)
-                                memberlist.append(f"{name}({member_id})")
-                                print(
-                                    f"削除したメンバー: {name}({member_id})"
-                                )  # 削除したメンバーを表示
-
-                    # 削除情報をまとめて送信
-                    if memberlist:
-                        total_removed = len(memberlist)
-                        send_message(
-                            channel_no,
-                            "\n".join(memberlist)
-                            + f"\nを削除しました\n合計削除数: {total_removed}",
-                        )
-                        print(f"合計削除数: {total_removed}")  # 合計削除数を表示
 
             if content.startswith("create:"):
                 if user_no == debugger:
@@ -1755,45 +1740,20 @@ def handle_messages(messages, received_messages):
                     send_message(channel_no, "チャンネル情報を取得できませんでした。")
 
             if content == "allgroups":
-                allChats = getAllChats()
-                msg = format_join_groups(allChats)
-                send_message(channel_no, msg)
-
-            if content == "ais":
-                image_models_message = "\n".join(image_generation_models)
-                text_models_message = "\n".join(text_generation_models)
-                models_message = (
-                    f"画像生成モデル:\n{image_models_message}\n\n"
-                    f"テキスト生成モデル:\n{text_models_message}"
-                )
-                send_message(channel_no, models_message)
-
-            if content.startswith("ai:"):
-                command = content[len("ai:") :].strip()
-                if command.startswith("image:"):
-                    parts = command[len("image:") :].strip().split(":", 1)
-                    model_name = parts[0] if len(parts) > 0 else "playground-v2.5"
-                    text_content = parts[1] if len(parts) > 1 else "やあ"
-                    save_directory = "./output"
-                    image_url = gen_ai(
-                        "image", model_name, text_content, save_directory
-                    )
-                    send_message(channel_no, image_url)
-                elif command.startswith("text:"):
-                    parts = command[len("text:") :].strip().split(":", 1)
-                    model_name = parts[0] if len(parts) > 0 else "gpt-4o-mini"
-                    text_content = parts[1] if len(parts) > 1 else "やあ"
-                    nowtime = datetime.now().strftime("%Y%m%d%H%M%S")
-                    save_directory = f"./ai/output/{nowtime}"
-                    text_result = gen_ai(
-                        "text", model_name, text_content, save_directory
-                    )
-                    send_message(channel_no, text_result)
+                if user_no == debugger:
+                    allChats = getAllChats()
+                    msg = format_join_groups(allChats)
+                    send_message(channel_no, msg)
                 else:
-                    nowtime = datetime.now().strftime("%Y%m%d%H%M%S")
-                    save_directory = f"./ai/output/{nowtime}"
-                    text_result = gen_ai("text", "gpt-4o-mini", command, save_directory)
-                    send_message(channel_no, text_result)
+                    pass
+
+            if content == "allfriends":
+                if user_no == debugger:
+                    allfriends = getAllChats()
+                    msg = format_friends(allfriends)
+                    send_message(channel_no, msg)
+                else:
+                    pass
 
             if content.startswith("search:"):
                 channel_no = channel_no
@@ -1861,24 +1821,15 @@ def handle_messages(messages, received_messages):
                 else:
                     pass
 
-            if message_no not in received_messages:
-                received_messages.add(message_no)
-                # チャンネル情報を含むメッセージの記録
-                received_message = (
-                    message_no,
-                    channel_no,
-                    last_message_no,
-                    message_time,
-                )
-                if received_message not in received_messages:
-                    received_messages.add(received_message)
         except Exception as e:
-            error_message = f"予期しないエラーが発生しました: {e}\n"
+            error_message = f"An unexpected error occurred: {e}\n"
             error_message += traceback.format_exc()
             print(error_message)
-            return None
-    save_received_messages(received_messages, "received_messages.json")
+
+    # Commit changes and close the database connection
+    conn.commit()
+    conn.close()
 
 
 if __name__ == "__main__":
-    receive_messages(nheaders)
+    receive_messages(nheaders, domainId, userNo)
