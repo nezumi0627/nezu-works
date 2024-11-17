@@ -1,0 +1,44 @@
+{
+    "1": 1877,
+    "2": 1717331816955,
+    "3": 25,
+    "4": 4,
+    "10": "0",
+    "20": {
+        "1": "uec2970f3d8264166329c06360c5e775a",
+        "2": "c61a3606be6043a47574e3195180924d4",
+        "3": 2,
+        "4": "510867087686631894",
+        "5": 1717331816952,
+        "10": {
+            "1": "ub74a912bb442e9a57ee066610bf4870c",
+            "2": "c61a3606be6043a47574e3195180924d4",
+            "3": 2,
+            "4": "510865228569772501",
+            "5": 1717330708975,
+            "6": 1717330708975,
+            "14": False,
+            "15": 22,
+            "18": {
+                "FLEX_VER": "u2",
+                "FLEX_JSON": '{"type":"bubble","size":"kilo","body":{"type":"box","layout":"vertical","paddingAll":"0px","paddingTop":"11px","paddingBottom":"11px","backgroundColor":"#fafafa","contents":[{"type":"box","layout":"vertical","paddingTop":"0px","paddingBottom":"0px","paddingStart":"14px","paddingEnd":"14px","contents":[{"type":"text","text":"ビジネス版LINE 「LINE WORKS」からトークに参加しました。\\\\n(グループ機能のノート/アルバム/イベント/投票/Liveには対応していません。)","size":"16px","color":"#18202f","lineSpacing":"3px","wrap":true}]}]},"footer":{"type":"box","layout":"vertical","paddingAll":"0px","contents":[{"type":"box","layout":"vertical","paddingTop":"14px","paddingBottom":"13px","contents":[{"type":"box","layout":"vertical","height":"30px","justifyContent":"center","action":{"type":"uri","label":"LINE WORKSについて","uri":"https://line.worksmobile.com/jp/"},"contents":[{"type":"text","text":"LINE WORKSについて","size":"15px","color":"#42659a","align":"center","wrap":false}]}]}]},"styles":{"footer":{"separator":true,"separatorColor":"#e5e5e5"}}}',
+                "BOT_CHECK": "1",
+                "ALT_TEXT": "ビジネス版LINE 「LINE WORKS」からトークに参加しました。\\n(グループ機能のノート/アルバム/イベント/投票/Liveには対応していません。)",
+                "BOT_TRACK": "api=pu",
+                "seq": "510865228569772501"
+            },
+            "19": 0,
+            "27": []
+        },
+        "14": False,
+        "15": 0,
+        "18": {},
+        "19": 0,
+        "21": "510865228569772501",
+        "22": 3,
+        "24": 1,
+        "27": []
+    },
+    "17": "N-project"
+}
+

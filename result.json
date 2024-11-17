@@ -1,0 +1,84 @@
+{
+    "tenantId": 400486244,
+    "domainId": 400486244,
+    "contactNo": 110002509263230,
+    "readOnly": false,
+    "tempId": false,
+    "name": {
+        "firstName": "蓮也",
+        "lastName": "近藤",
+        "phoneticFirstName": "",
+        "phoneticLastName": "",
+        "phoneticName": "",
+        "displayName": "近藤蓮也"
+    },
+    "i18nName": "",
+    "i18nNames": [],
+    "photos": [],
+    "organizations": [
+        {
+            "domainId": 400486244,
+            "organization": "Nezumi-Project",
+            "groups": []
+        }
+    ],
+    "emails": [
+        {
+            "content": "neko3desu4ne@nezumouse3",
+            "typeCode": "WORK",
+            "represent": true
+        },
+        {
+            "content": "hsretaehae@tatsu.uk",
+            "typeCode": "OTHER",
+            "represent": false
+        }
+    ],
+    "telephones": [],
+    "messengers": [],
+    "position": "管理職",
+    "department": "",
+    "important": false,
+    "executive": false,
+    "photoHash": "",
+    "worksAt": {
+        "id": "neko3desu4ne@nezumouse3",
+        "inviteUrl": "https://works.do/R/ti/p/neko3desu4ne@nezumouse3",
+        "users": [
+            {
+                "serviceType": "line",
+                "worksAtUserNo": 913000043145661,
+                "name": "近藤蓮也",
+                "id": "neko3desu4ne@nezumouse3",
+                "inviteUrl": "https://works.do/R/ti/p/neko3desu4ne@nezumouse3"
+            },
+            {
+                "serviceType": "worksat",
+                "worksAtUserNo": 913000043145660,
+                "name": "近藤蓮也",
+                "id": "neko3desu4ne@nezumouse3",
+                "inviteUrl": "https://works.do/R/ti/p/neko3desu4ne@nezumouse3"
+            }
+        ],
+        "worksAtCount": 1,
+        "idSearchBlock": false
+    },
+    "accessLimit": false,
+    "userPhotoModify": true,
+    "userAbsenceModify": false,
+    "organization": "Nezumi-Project",
+    "groups": [],
+    "worksServices": [
+        "home",
+        "message",
+        "calendar",
+        "contact",
+        "form",
+        "task",
+        "appdir"
+    ],
+    "customFields": [],
+    "profileStatuses": [],
+    "profileStatusesV2": [],
+    "instance": 23921
+}

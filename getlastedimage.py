@@ -1,0 +1,111 @@
+# レスポンスデータ
+response_data = {
+    "code": 200,
+    "message": "OK",
+    "result": {
+        "beforeMessageList": [],
+        "afterMessageList": [
+            {
+                "messageId": 0,
+                "channelNo": 287933058,
+                "writerId": "913000043047576",
+                "userNo": 913000043047576,
+                "botNo": 0,
+                "messageNo": 61,
+                "content": "",
+                "memberCount": 310,
+                "messageTypeCode": 11,
+                "messageStatusType": "NORMAL",
+                "messageStatusTypeCode": 0,
+                "extras": '{"filecreatetime":1722503541684,"filename":"519543791943417858.jpg","filesize":54422,"resourcepath":"/k/oneapp/r/jp1.400486244/400486244/v2-400486244-2904320578.397041140/519543791943417858.jpg"}',
+                "tid": 519543791943417858,
+                "createTime": 1722503536593,
+                "updateTime": 1722503547497,
+                "recaller": 0,
+            },
+            {
+                "messageId": 0,
+                "channelNo": 287933058,
+                "writerId": "913000041624790",
+                "userNo": 913000041624790,
+                "botNo": 0,
+                "messageNo": 62,
+                "content": "",
+                "memberCount": 310,
+                "messageTypeCode": 11,
+                "messageStatusType": "NORMAL",
+                "messageStatusTypeCode": 0,
+                "extras": '{"filecreatetime":1722503547485,"filename":"519543798133424618.jpg","filesize":180468,"resourcepath":"/k/oneapp/r/jp1.400486244/400486244/v2-400486244-2904320871.397041145/519543798133424618.jpg"}',
+                "tid": 519543798133424618,
+                "createTime": 1722503540275,
+                "updateTime": 1722503549208,
+                "recaller": 0,
+            },
+            {
+                "messageId": 0,
+                "channelNo": 287933058,
+                "writerId": "913000043047576",
+                "userNo": 913000043047576,
+                "botNo": 0,
+                "messageNo": 63,
+                "content": "",
+                "memberCount": 310,
+                "messageTypeCode": 11,
+                "messageStatusType": "NORMAL",
+                "messageStatusTypeCode": 0,
+                "extras": '{"filecreatetime":1722503554557,"filename":"519543813485101377.jpg","filesize":63664,"resourcepath":"/k/oneapp/r/jp1.400486244/400486244/v2-400486244-2904321307.397041153/519543813485101377.jpg"}',
+                "tid": 519543813485101377,
+                "createTime": 1722503549345,
+                "updateTime": 1722503556297,
+                "recaller": 0,
+            },
+            {
+                "messageId": 0,
+                "channelNo": 287933058,
+                "writerId": "902100054360402",
+                "userNo": 902100054360402,
+                "botNo": 0,
+                "messageNo": 76,
+                "content": "",
+                "memberCount": 310,
+                "messageTypeCode": 11,
+                "messageStatusType": "NORMAL",
+                "messageStatusTypeCode": 0,
+                "extras": '{"filecreatetime":1722503633986,"filename":"519543946981408789.jpg","filesize":6692,"resourcepath":"/k/oneapp/r/jp1.400486244/400486244/v2-400486244-2904325301.397041232/519543946981408789.jpg"}',
+                "tid": 519543946981408789,
+                "createTime": 1722503629092,
+                "updateTime": 1722503634685,
+                "recaller": 0,
+            },
+            {
+                "messageId": 0,
+                "channelNo": 287933058,
+                "writerId": "913000043047576",
+                "userNo": 913000043047576,
+                "botNo": 0,
+                "messageNo": 109,
+                "content": "",
+                "memberCount": 310,
+                "messageTypeCode": 11,
+                "messageStatusType": "NORMAL",
+                "messageStatusTypeCode": 0,
+                "extras": '{"filecreatetime":1722503868818,"filename":"519544340675035673.jpg","filesize":279454,"resourcepath":"/k/oneapp/r/jp1.400486244/400486244/v2-400486244-2904338172.397041467/519544340675035673.jpg"}',
+                "tid": 519544340675035673,
+                "createTime": 1722503863869,
+                "updateTime": 1722503869378,
+                "recaller": 0,
+            },
+        ],
+    },
+}
+
+# メッセージリストを createTime でソート
+sorted_messages = sorted(
+    response_data["result"]["afterMessageList"], key=lambda x: x["createTime"]
+)
+
+# 画像URLを表示
+for message in sorted_messages:
+    file_info = eval(message["extras"])
+    image_url = f"https://talk.worksmobile.com/p/download/k/{file_info['resourcepath']}?channelNo={message['channelNo']}&callerNo={message['writerId']}&ocn=1&serviceId=works"
+    print(f"画像URL: {image_url}")

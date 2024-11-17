@@ -1,0 +1,3489 @@
+{
+    "code": 200,
+    "message": "OK",
+    "recentMessage": {
+        "userUnreadCount": 711,
+        "userFirstMessageNo": 244,
+        "userLastMessageNo": 955,
+        "messageList": [],
+        "writerMemberInfos": [
+            {
+                "userNo": 913000041941364,
+                "name": "近藤蓮也",
+                "i18nName": "",
+                "i18nNames": null,
+                "nickName": "",
+                "position": "",
+                "i18nPositions": null,
+                "groupName": "",
+                "i18nGroupNames": null,
+                "groupPosition": "",
+                "i18nGroupPositions": null,
+                "photoHash": "31284d1ef9e119af679edf0ec6a9967c",
+                "join": true,
+                "joinTime": 1717950121687,
+                "updateTime": 1718194880026,
+                "domainId": 400460495,
+                "propertyFlag": 0,
+                "domainName": "ねずみ族",
+                "i18nDomainNames": null,
+                "serviceType": "line",
+                "relationStatus": "me",
+                "tenantId": 400460495,
+                "mappingContactNos": [
+                    110002509004447
+                ],
+                "guest": false
+            }
+        ],
+        "writerBotInfos": []
+    },
+    "channelInfo": {
+        "channelNo": 278287860,
+        "channelType": 10,
+        "userCount": 332,
+        "botCount": 0,
+        "joined": true,
+        "silentMode": 0,
+        "pin": false,
+        "unreadCount": 0,
+        "firstMessageNo": 0,
+        "latestMessageNo": 955,
+        "lastMessageNo": 955,
+        "messageTime": 1718197155252,
+        "updateTime": 1718197155266,
+        "periodMin": 0,
+        "title": "ミクの権限者たち(雑談まる)あ",
+        "photoPath": "/k/channel-profile/r/jp1.400460495/400460495/1717937467.c_278287860_2724035749",
+        "flag": 0,
+        "channelExtras": "{\"botCount\":\"0\",\"channelId\":\"3c0b6667-acf3-3583-c160-ec2e417e364f\",\"localTenants\":\"[]\",\"serviceType\":\"line\",\"unreadMentionCount\":\"0\"}",
+        "visible": true
+    },
+    "readInfos": [
+        {
+            "userNo": 902100008766765,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 902100008766909,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 954
+                }
+            ]
+        },
+        {
+            "userNo": 902100010583781,
+            "join": false,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                },
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 902100011433321,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 902100011552940,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 561
+                }
+            ]
+        },
+        {
+            "userNo": 902100011811117,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 920
+                }
+            ]
+        },
+        {
+            "userNo": 902100011878993,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 902100012906913,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 28
+                }
+            ]
+        },
+        {
+            "userNo": 902100012907392,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 955
+                }
+            ]
+        },
+        {
+            "userNo": 902100015068705,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 901
+                }
+            ]
+        },
+        {
+            "userNo": 902100015277925,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 846
+                }
+            ]
+        },
+        {
+            "userNo": 902100015668859,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 341
+                }
+            ]
+        },
+        {
+            "userNo": 902100015996402,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 932
+                }
+            ]
+        },
+        {
+            "userNo": 902100016942825,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 920
+                }
+            ]
+        },
+        {
+            "userNo": 902100017659960,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 955
+                }
+            ]
+        },
+        {
+            "userNo": 902100017751451,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 743
+                }
+            ]
+        },
+        {
+            "userNo": 902100029402255,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 902100037696392,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 902100039705496,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 902100040460030,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 932
+                }
+            ]
+        },
+        {
+            "userNo": 902100046620974,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 839
+                }
+            ]
+        },
+        {
+            "userNo": 902100053623225,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 955
+                }
+            ]
+        },
+        {
+            "userNo": 902100054360402,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 912
+                }
+            ]
+        },
+        {
+            "userNo": 902100058243521,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 901
+                }
+            ]
+        },
+        {
+            "userNo": 902100058910486,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 932
+                }
+            ]
+        },
+        {
+            "userNo": 902100059673922,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 902100060779768,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 740
+                }
+            ]
+        },
+        {
+            "userNo": 902100064180025,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 902100064880889,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 821
+                }
+            ]
+        },
+        {
+            "userNo": 902100065531715,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 902100065891486,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 902100068045139,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 920
+                }
+            ]
+        },
+        {
+            "userNo": 902100070179760,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 24
+                }
+            ]
+        },
+        {
+            "userNo": 902100071539288,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000000086167,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000000116254,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000001063324,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000001063380,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000001195998,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000001767748,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000002197511,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 932
+                }
+            ]
+        },
+        {
+            "userNo": 913000002218520,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 760
+                }
+            ]
+        },
+        {
+            "userNo": 913000002253401,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000003728897,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000003889553,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 954
+                }
+            ]
+        },
+        {
+            "userNo": 913000004266654,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 932
+                }
+            ]
+        },
+        {
+            "userNo": 913000004516601,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 932
+                }
+            ]
+        },
+        {
+            "userNo": 913000005055453,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000005056215,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000005398431,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000005409304,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000005410080,
+            "join": false,
+            "readMsgs": [
+                {
+                    "first": 720,
+                    "last": 0
+                },
+                {
+                    "first": 781,
+                    "last": 0
+                },
+                {
+                    "first": 781,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000005471475,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000005506308,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 928
+                }
+            ]
+        },
+        {
+            "userNo": 913000005529203,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000005571775,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000005579257,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000005586851,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 920
+                }
+            ]
+        },
+        {
+            "userNo": 913000005586855,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 916
+                }
+            ]
+        },
+        {
+            "userNo": 913000005628257,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000005738720,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000005786316,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000005798844,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000005827461,
+            "join": false,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 724
+                },
+                {
+                    "first": 1,
+                    "last": 724
+                }
+            ]
+        },
+        {
+            "userNo": 913000005891531,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000005962650,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000006065520,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000006081784,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000006097588,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000006114863,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000006116224,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000006446101,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000006556186,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 932
+                }
+            ]
+        },
+        {
+            "userNo": 913000006750660,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000006867386,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000006913322,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000006913335,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000006954446,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 954
+                }
+            ]
+        },
+        {
+            "userNo": 913000007218458,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 900
+                }
+            ]
+        },
+        {
+            "userNo": 913000007343429,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000007516784,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000007693157,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000007815729,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000007966483,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000007990068,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 724
+                }
+            ]
+        },
+        {
+            "userNo": 913000008062292,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 718
+                }
+            ]
+        },
+        {
+            "userNo": 913000008138816,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 954
+                }
+            ]
+        },
+        {
+            "userNo": 913000008148322,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000008181121,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000008774048,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000008839705,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000008965415,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000008975235,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000008975239,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000009036156,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000009094355,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000009395581,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000009498236,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000009498237,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000009523157,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000009673030,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 901
+                }
+            ]
+        },
+        {
+            "userNo": 913000009710685,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000009776781,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 932
+                }
+            ]
+        },
+        {
+            "userNo": 913000010063666,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 932
+                }
+            ]
+        },
+        {
+            "userNo": 913000010128715,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000010306649,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 654
+                }
+            ]
+        },
+        {
+            "userNo": 913000010348145,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 951
+                }
+            ]
+        },
+        {
+            "userNo": 913000010417300,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000010417302,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000010417303,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000010448913,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000010472369,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000010472773,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000010513819,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000010621214,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000010717473,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000010729973,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000010749363,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000010862403,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000010920112,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000010973585,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000010983076,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 933
+                }
+            ]
+        },
+        {
+            "userNo": 913000010988466,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 128
+                }
+            ]
+        },
+        {
+            "userNo": 913000011307001,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000011307002,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000011307004,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000011307005,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000011307006,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000011622286,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000012581062,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000012954939,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000012964476,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000013055840,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000013163631,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000013217464,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000013408215,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000013431692,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000013676040,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000013692494,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000013733603,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000014004255,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000014220474,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000014560389,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000015120758,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000015120759,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000015120761,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000015120769,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000015133984,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000015148095,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 718
+                }
+            ]
+        },
+        {
+            "userNo": 913000015625531,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 954
+                }
+            ]
+        },
+        {
+            "userNo": 913000016828142,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000018620124,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 944
+                }
+            ]
+        },
+        {
+            "userNo": 913000019203441,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 920
+                }
+            ]
+        },
+        {
+            "userNo": 913000019229366,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 759
+                }
+            ]
+        },
+        {
+            "userNo": 913000019645247,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000019857032,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000020299660,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000020303167,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000020539725,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000020539734,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000020780264,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 245
+                }
+            ]
+        },
+        {
+            "userNo": 913000022165966,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 747
+                }
+            ]
+        },
+        {
+            "userNo": 913000022472108,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000022660830,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 837
+                }
+            ]
+        },
+        {
+            "userNo": 913000022660832,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000022853773,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 337
+                }
+            ]
+        },
+        {
+            "userNo": 913000023112548,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000023393870,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000023400177,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 932
+                }
+            ]
+        },
+        {
+            "userNo": 913000024310657,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 717
+                }
+            ]
+        },
+        {
+            "userNo": 913000024502083,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000024837969,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000024933719,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000027022066,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 923
+                }
+            ]
+        },
+        {
+            "userNo": 913000027211171,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000027217517,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000027268623,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000027274622,
+            "join": false,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                },
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000027913685,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000028336573,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000028358675,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 923
+                }
+            ]
+        },
+        {
+            "userNo": 913000029363151,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 955
+                }
+            ]
+        },
+        {
+            "userNo": 913000029452841,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000030848149,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 614
+                }
+            ]
+        },
+        {
+            "userNo": 913000032128422,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 932
+                }
+            ]
+        },
+        {
+            "userNo": 913000032214798,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 920
+                }
+            ]
+        },
+        {
+            "userNo": 913000032474243,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 834
+                }
+            ]
+        },
+        {
+            "userNo": 913000033196486,
+            "join": false,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 759
+                },
+                {
+                    "first": 1,
+                    "last": 759
+                }
+            ]
+        },
+        {
+            "userNo": 913000033307008,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000033307009,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000033307010,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000033734050,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 955
+                }
+            ]
+        },
+        {
+            "userNo": 913000033770031,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000033817319,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 716
+                }
+            ]
+        },
+        {
+            "userNo": 913000033833172,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 954
+                }
+            ]
+        },
+        {
+            "userNo": 913000033948135,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 943
+                }
+            ]
+        },
+        {
+            "userNo": 913000034013967,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000034025976,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000034056979,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 955
+                }
+            ]
+        },
+        {
+            "userNo": 913000034966664,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000035010477,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 753
+                }
+            ]
+        },
+        {
+            "userNo": 913000035030061,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 932
+                }
+            ]
+        },
+        {
+            "userNo": 913000035190302,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000035225939,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000035320144,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 805
+                }
+            ]
+        },
+        {
+            "userNo": 913000036127495,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 955
+                }
+            ]
+        },
+        {
+            "userNo": 913000036268832,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 932
+                }
+            ]
+        },
+        {
+            "userNo": 913000036454129,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000037083239,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 955
+                }
+            ]
+        },
+        {
+            "userNo": 913000037350955,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 955
+                }
+            ]
+        },
+        {
+            "userNo": 913000037466532,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 923
+                }
+            ]
+        },
+        {
+            "userNo": 913000037602651,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 950
+                }
+            ]
+        },
+        {
+            "userNo": 913000037667471,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 760
+                }
+            ]
+        },
+        {
+            "userNo": 913000037681987,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000037768447,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000037791454,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000037804572,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 922
+                }
+            ]
+        },
+        {
+            "userNo": 913000038284601,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 932
+                }
+            ]
+        },
+        {
+            "userNo": 913000038551601,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 920
+                }
+            ]
+        },
+        {
+            "userNo": 913000038690969,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 932
+                }
+            ]
+        },
+        {
+            "userNo": 913000038761301,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000038899373,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 955
+                }
+            ]
+        },
+        {
+            "userNo": 913000038939944,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000039365799,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 684
+                }
+            ]
+        },
+        {
+            "userNo": 913000039396969,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000039547029,
+            "join": false,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 365
+                },
+                {
+                    "first": 1,
+                    "last": 365
+                }
+            ]
+        },
+        {
+            "userNo": 913000039557226,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000039589800,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000039698909,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 944
+                }
+            ]
+        },
+        {
+            "userNo": 913000039701429,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000039740004,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 955
+                }
+            ]
+        },
+        {
+            "userNo": 913000039740005,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 775
+                }
+            ]
+        },
+        {
+            "userNo": 913000039917368,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000039992594,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 920
+                }
+            ]
+        },
+        {
+            "userNo": 913000039992604,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000040084811,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000040164235,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000040164236,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000040164237,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000040438452,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000040543129,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000040682649,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000040689740,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000040689742,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000040689743,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000040748368,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 928
+                }
+            ]
+        },
+        {
+            "userNo": 913000041168287,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041242383,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 901
+                }
+            ]
+        },
+        {
+            "userNo": 913000041288095,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041288096,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041288099,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041288100,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041288101,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041288102,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041288103,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041288104,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041288105,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041288106,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041288107,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041288109,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041288110,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 920
+                }
+            ]
+        },
+        {
+            "userNo": 913000041288112,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041288113,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041288114,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041288115,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041288116,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 910
+                }
+            ]
+        },
+        {
+            "userNo": 913000041288117,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041288118,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041288119,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041288120,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 679
+                }
+            ]
+        },
+        {
+            "userNo": 913000041288121,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 955
+                }
+            ]
+        },
+        {
+            "userNo": 913000041288122,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041288123,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041288124,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041288125,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041288126,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041288129,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041288131,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 311
+                }
+            ]
+        },
+        {
+            "userNo": 913000041288132,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 920
+                }
+            ]
+        },
+        {
+            "userNo": 913000041288133,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041288134,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041288135,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041295398,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 815
+                }
+            ]
+        },
+        {
+            "userNo": 913000041344115,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 955
+                }
+            ]
+        },
+        {
+            "userNo": 913000041348771,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041352988,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041353447,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041379759,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041441442,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 810
+                }
+            ]
+        },
+        {
+            "userNo": 913000041520131,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041520271,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041594237,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 932
+                }
+            ]
+        },
+        {
+            "userNo": 913000041624790,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 955
+                }
+            ]
+        },
+        {
+            "userNo": 913000041626145,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 932
+                }
+            ]
+        },
+        {
+            "userNo": 913000041694709,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041719953,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041720026,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041720043,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041720045,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041720047,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041720049,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041720051,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041720053,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041720055,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041720057,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041720059,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041720061,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041720063,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041720066,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041720068,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041720070,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041720072,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041720074,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041720076,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041720078,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041720080,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041720082,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041720085,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041720088,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041720090,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041720092,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041720094,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041720096,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041720098,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041720100,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041720506,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041763725,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 718
+                }
+            ]
+        },
+        {
+            "userNo": 913000041779600,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 933
+                }
+            ]
+        },
+        {
+            "userNo": 913000041780576,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 589,
+                    "last": 0
+                },
+                {
+                    "first": 903,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041879104,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 938
+                }
+            ]
+        },
+        {
+            "userNo": 913000041920978,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 27
+                }
+            ]
+        },
+        {
+            "userNo": 913000041935880,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 700,
+                    "last": 939
+                }
+            ]
+        },
+        {
+            "userNo": 913000041941364,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 125
+                },
+                {
+                    "first": 244,
+                    "last": 955
+                }
+            ]
+        },
+        {
+            "userNo": 913000041947902,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 955
+                }
+            ]
+        },
+        {
+            "userNo": 913000041954157,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 117,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000041954168,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 120,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 913000042045884,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 953,
+                    "last": 0
+                }
+            ]
+        },
+        {
+            "userNo": 914000002509449,
+            "join": true,
+            "readMsgs": [
+                {
+                    "first": 1,
+                    "last": 781
+                }
+            ]
+        }
+    ],
+    "nextReadUpdateTime": 1718197633270,
+    "botList": [],
+    "updatedMsgNoList": [],
+    "largestReadMsgNo": 0,
+    "notices": {
+        "latestRegisterTime": 0,
+        "messageList": [],
+        "members": []
+    }
+}
